@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>UrunEkle</h2>
+
+@* BURADA ÜRÜN EKLEME İŞLEMİ YAPILMAKTADIR *@
+
+<form class="form-group" method="post">
+
+
+    <div>
+        <label>ÜRÜN ADI</label>
+        <input type="text" class="form-control" name="URUNAD" required="" />
+    </div>
+
+
+    <div>
+        <label>KATEGORİ SEÇİNİZ</label>
+        <input type="text" class="form-control" name="URUNKATEGORI" required="" />
+    </div>
+
+    <div>
+        <label>FİYAT</label>
+        <input type="text" class="form-control" name="FIYAT" required="" />
+    </div>
+
+    <div>
+        <label>MARKA</label>
+        <input type="text" class="form-control" name="MARKA" required="" />
+    </div>
+
+    <div>
+        <label>STOK ADET</label>
+        <input type="text" class="form-control" name="STOK" required="" />
+    </div>
+
+    <br />
+    <br />
+
+
+    <button class="btn btn-info">Ürün Ekle</button>
+
+</form>

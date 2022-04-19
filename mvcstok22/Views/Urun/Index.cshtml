@@ -1,0 +1,69 @@
+﻿
+
+
+@using mvcstok22.Models.Entity;
+@model List<urunler>            
+@* ürünler tablosu alınıyor *@
+
+
+
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+
+
+
+
+        <th>ÜRÜN ID</th>
+        <th>ÜRÜN ADI</th>
+        <th>ÜRÜN KATEGORİSİ</th>
+        <th>ÜRÜN FİYATI</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+
+
+
+
+
+    </tr>
+
+
+    <tbody>
+        @*Buradaki Model yazısı aynen bu şekilde, baş harfi büyük yazılmalıdır*@
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <th>@urn.URUNID</th>
+                <th>@urn.URUNAD</th>
+                <th>@urn.URUNKATEGORI</th>
+                <th>@urn.FIYAT</th>
+                <th>@urn.MARKA</th>
+                <th>@urn.STOK</th>
+                <th> <a href="/Urun/SIL/@urn.URUNID" class="btn btn-danger">SİL</a></th>
+                <th> <a href="/Urun/UrunGetir/@urn.URUNID" class="btn btn-success">GÜNCELLE</a></th>
+
+            </tr>
+        }
+
+    </tbody>
+
+
+
+
+
+</table>
+
+<a href="/Urun/UrunEkle/" class="btn btn-primary">YENİ ÜRÜN EKLE</a>

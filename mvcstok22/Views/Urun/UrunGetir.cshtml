@@ -1,0 +1,54 @@
+﻿@model mvcstok22.Models.Entity.urunler
+
+@{ ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml"; }
+
+
+
+@* BU SAYFA ÜRÜN GÜNCELLEME SAYFASIDIR. BURADAKİ ALINAN VERİLER CONTROLLERA İLETİLMEKTEDİR. POST İLE *@
+
+
+@* BİR ALT SATIRDA Urun YAZAN YERDE UrunController'DA YAZILABİLİRDİ. AMA CONTROLLER KISMININ YAZILMASINA GEREK YOK*@
+@using (Html.BeginForm("GUNCELLE", "Urun", FormMethod.Post))
+
+
+{
+<div class="form-group">
+    @* m burada tabloda güncellemesi istenen ürünü belirtir. burada o ürüne ait bilgileri textboxlara aktarıyoruz *@
+    @Html.LabelFor(m => m.URUNID)
+    @Html.TextBoxFor(m => m.URUNID, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.URUNAD)
+    @Html.TextBoxFor(m => m.URUNAD, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.URUNKATEGORI)
+    @*@Html.DropDownListFor(m => m.kategoriler.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })*@
+    @Html.TextBoxFor(m => m.URUNKATEGORI, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.FIYAT)
+    @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.MARKA)
+    @Html.TextBoxFor(m => m.MARKA, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.STOK)
+    @Html.TextBoxFor(m => m.STOK, new { @class = "form-control" })
+
+
+</div>
+
+                <div>
+                    @* BUTONDAN CONTROLLERA VERİLER BÖYLE GÖNDERİLİR. DİKKAT EDERSENİZ YİNE URUNCONTROLLER YERİNE SADECE Urun YAZILMASI YETERLİ *@
+                    <button class="btn btn-warning">Ürün Güncelle</button>
+                </div>}
+
